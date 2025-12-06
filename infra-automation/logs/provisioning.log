@@ -13,3 +13,9 @@
 2025-12-06 18:09:33,312 - INFO - Configuration saved to configs\instances.json
 2025-12-06 18:09:33,312 - INFO - Starting execution of scripts\setup_nginx.sh
 2025-12-06 18:09:38,517 - INFO - Setup script finished successfully.
+2025-12-06 18:11:52,505 - INFO - System started
+2025-12-06 18:22:34,307 - INFO - System started
+2025-12-06 18:23:20,935 - INFO - Machine created: computer 2, OS: Ubuntu
+2025-12-06 18:23:31,760 - INFO - Configuration saved to configs\instances.json
+2025-12-06 18:23:31,761 - INFO - Starting execution of scripts\setup_nginx.sh
+2025-12-06 18:23:36,958 - INFO - Setup script finished successfully.

@@ -1,8 +1,8 @@
 [
     {
-        "name": "Cmputer 1",
+        "name": "computer 2",
         "os": "Ubuntu",
-        "cpu": "vCPU 2",
-        "ram": "32 GB"
+        "cpu": "vCPU i7",
+        "ram": "12 GB"
     }
 ]
