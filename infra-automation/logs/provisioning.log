@@ -1,0 +1,4 @@
+2025-12-06 17:33:55,123 - INFO - System started
+2025-12-06 17:34:30,660 - INFO - Machine created: Mahshev AHAD, OS: CentOS
+2025-12-06 17:35:09,456 - INFO - Machine created: Mahshev 2, OS: Windows
+2025-12-06 17:35:34,439 - INFO - Configuration saved to configs\instances.json
