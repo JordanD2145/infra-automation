@@ -30,4 +30,4 @@ The tool allows users to:
    cd infra-automation
 # run the project -in terminal - python src/main.py
 
-   # Just to make it clear , i was trubling in installing nginx in window so got help and made it by echo like it is a real installtion
+   # Just to make it clear , i was trubling in installing nginx in windows OS so got help and made it by echo like it is a real installtion
