@@ -1,36 +1,33 @@
-# Infra Automation Project 🚀
+# DevOps Infrastructure Provisioning Project 🚀
 
-## 📖 Project Overview
-The **Infra Automation Project** is a comprehensive Python-based CLI tool designed to automate system maintenance and monitoring tasks.
-The primary goal of this project is to provide a robust infrastructure for tracking system health (CPU, Memory, Disk), managing automated tasks, and handling structured logging.
+A modular automation tool designed to simulate infrastructure provisioning and service configuration.
+This project was developed as part of a DevOps course to demonstrate Python and Bash integration.
 
-This project was developed as the final assignment for the Python course, demonstrating modular architecture, object-oriented programming, and configuration management.
-
-## 👤 Submitter Details
-* **Student Name:** Jordan Davidov
-* **ID:** 313591026
-* **Course Name:** Python
-
-## ✨ Key Features
-The system includes the following core capabilities:
-* **System Resource Monitoring:** Real-time tracking of system performance (CPU usage, Memory load, Disk space).
-* **Automated Logging:** A robust logging mechanism that records all system events and errors into the `logs/` directory for auditing.
-* **Configuration Management:** Uses external JSON/YAML files located in `configs/` to dynamically control system thresholds without modifying code.
-* **Modular Design:** The project is structured as a package (`src/`), ensuring code reusability and clean separation of logic.
-* **Error Handling:** Implements comprehensive exception handling to ensure continuous operation.
+## 📋 Project Overview
+The tool allows users to:
+1. Define Virtual Machines (VMs) dynamically via CLI.
+2. Save configurations to a JSON file.
+3. Automatically execute a Bash script to simulate Nginx installation using Python's `subprocess`.
+4. Log all activities to a dedicated log file.
 
 ## 📂 Project Structure
-* `src/` - **Source Code**: Contains the main application logic and modules.
-* `configs/` - **Configuration**: Stores settings files for easy customization.
-* `scripts/` - **Automation Scripts**: Helper scripts for setup and maintenance.
-* `logs/` - **Logs**: Destination for all generated log files.
-* `requirements.txt` - **Dependencies**: Lists all external Python libraries required.
+* `src/` - Core Python logic (Main script, Machine class, Logger).
+* `scripts/` - Bash scripts for automation (e.g., `setup_nginx.sh`).
+* `configs/` - Stores the generated `instances.json`.
+* `logs/` - Stores system logs (`provisioning.log`).
 
 ## ⚙️ Prerequisites
-* Python 3.8+
+* Python 3.x
 * Git
+* Linux/Mac environment (or Git Bash on Windows)
 
 ## 🚀 How to Run
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/JordanD2145/infra-automation.git
+   git clone <https://github.com/JordanD2145/infra-automation.git
+   
+   >
+   cd infra-automation
+# run the project -in terminal - python src/main.py
+
+   # Just to make it clear , i was trubling in installing nginx in window so got help and made it by echo like it is a real installtion

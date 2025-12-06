@@ -2,3 +2,9 @@
 2025-12-06 17:34:30,660 - INFO - Machine created: Mahshev AHAD, OS: CentOS
 2025-12-06 17:35:09,456 - INFO - Machine created: Mahshev 2, OS: Windows
 2025-12-06 17:35:34,439 - INFO - Configuration saved to configs\instances.json
+2025-12-06 17:53:43,479 - INFO - System started
+2025-12-06 17:54:15,993 - INFO - Machine created: Mahshev 1, OS: Wimdows
+2025-12-06 17:54:35,517 - INFO - Machine created: Mahshev 2, OS: Linux
+2025-12-06 17:54:38,752 - INFO - Configuration saved to configs\instances.json
+2025-12-06 17:54:38,752 - INFO - Starting execution of scripts\setup_nginx.sh
+2025-12-06 17:54:44,052 - INFO - Setup script finished successfully.

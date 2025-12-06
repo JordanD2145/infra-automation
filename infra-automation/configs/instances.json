@@ -1,14 +1,14 @@
 [
     {
-        "name": "Mahshev AHAD",
-        "os": "CentOS",
-        "cpu": "24",
-        "ram": "12"
+        "name": "Mahshev 1",
+        "os": "Wimdows",
+        "cpu": "Intel i7",
+        "ram": "12g"
     },
     {
         "name": "Mahshev 2",
-        "os": "Windows",
-        "cpu": "1",
-        "ram": "32"
+        "os": "Linux",
+        "cpu": "rayven7",
+        "ram": "32g"
     }
 ]
