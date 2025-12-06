@@ -1,7 +1,7 @@
 import json
 import sys
 import os
-import subprocess  # This is the library required to run Bash scripts 
+import subprocess
 
 # Setup path to import modules
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -9,8 +9,31 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src.machine import Machine
 from src.logger import logger
 
+def validate_input(os_type, cpu, ram):
+    """
+    Validates user input according to project rules.
+    Returns True if valid, False if invalid.
+    """
+    # 1. Check OS type
+    valid_os = ["Ubuntu", "CentOS", "Linux"]
+    if os_type not in valid_os:
+        print(f"[!] Error: OS must be one of: {valid_os}")
+        return False
+
+    # 2. Check CPU format (must contain 'vCPU')
+    if "vCPU" not in cpu:
+        print("[!] Error: CPU must contain 'vCPU' (e.g., 2vCPU)")
+        return False
+
+    # 3. Check RAM format (must contain 'GB')
+    if "GB" not in ram:
+        print("[!] Error: RAM must contain 'GB' (e.g., 4GB)")
+        return False
+
+    return True
+
 def get_user_input():
-    """Collects machine details from the user."""
+    """Collects machine details from the user with validation."""
     machines_list = []
     print("--- Welcome to Infra Automation ---")
     
@@ -19,10 +42,20 @@ def get_user_input():
         if name.lower() == 'done':
             break
             
-        os_type = input("Enter OS (e.g., Ubuntu, CentOS): ")
-        cpu = input("Enter CPU (e.g., 2vCPU): ")
-        ram = input("Enter RAM (e.g., 4GB): ")
+        # Loop until valid input is received
+        while True:
+            os_type = input("Enter OS (Ubuntu/CentOS): ")
+            cpu = input("Enter CPU (e.g., 2vCPU): ")
+            ram = input("Enter RAM (e.g., 4GB): ")
+
+            # Call our new validation function (The "Traffic Cop")
+            if validate_input(os_type, cpu, ram):
+                # If valid, break the inner loop and proceed
+                break
+            else:
+                print(">>> Invalid input. Please try again.\n")
         
+        # Create and save the machine
         new_machine = Machine(name, os_type, cpu, ram)
         machines_list.append(new_machine.to_dict())
         print(f"✅ Machine '{name}' added successfully!\n")
@@ -42,24 +75,16 @@ def save_to_file(data):
         logger.error(f"Failed to save file: {e}")
 
 def run_setup_script():
-    """
-    Executes the Bash script using Python's subprocess module.
-    Required by project instructions.
-    """
-    # Define the path to the script
+    """Executes the Bash script using Python's subprocess module."""
     script_path = os.path.join('scripts', 'setup_nginx.sh')
     
     print(f"\n[INFO] Python is now running the Bash script: {script_path}...")
     logger.info(f"Starting execution of {script_path}")
 
     try:
-        # This is the critical line: Python calls Bash to run the script
-        # check=True ensures Python raises an error if the script fails
         subprocess.run(["bash", script_path], check=True)
-        
         print("[V] Bash script finished successfully.")
         logger.info("Setup script finished successfully.")
-        
     except subprocess.CalledProcessError as e:
         print(f"[X] Bash script failed with error: {e}")
         logger.error(f"Script execution failed: {e}")
@@ -71,14 +96,10 @@ def run_setup_script():
 if __name__ == "__main__":
     logger.info("System started")
     
-    # Step 1: Get User Input
     collected_data = get_user_input()
     
     if collected_data:
-        # Step 2: Save to JSON
         save_to_file(collected_data)
-        
-        # Step 3: Run the Bash Script (Automation)
         run_setup_script()
     else:
         print("No machines created. Exiting.")

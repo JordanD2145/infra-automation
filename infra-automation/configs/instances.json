@@ -1,14 +1,8 @@
 [
     {
-        "name": "Mahshev 1",
-        "os": "Wimdows",
-        "cpu": "Intel i7",
-        "ram": "12g"
-    },
-    {
-        "name": "Mahshev 2",
-        "os": "Linux",
-        "cpu": "rayven7",
-        "ram": "32g"
+        "name": "Cmputer 1",
+        "os": "Ubuntu",
+        "cpu": "vCPU 2",
+        "ram": "32 GB"
     }
 ]
